@@ -11,7 +11,7 @@
 <form action="Entrega" method="post">
 Nombre: <input type="text" name="nombre"></br></br>
 Contraseña: <input type="password" name="password"></br></br>
-E-mail: <input type="text" name="mail"></br></br>
+
 <input type="submit" value="Entrar"></br></br>
 </form>
 
