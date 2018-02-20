@@ -57,6 +57,7 @@ public class LlamadaTabla extends HttpServlet {
 		String origen = request.getParameter("origen");
 		String destino = request.getParameter("destino");
 
+		
 		List<PedidoPojo> listaEnvios = new ArrayList<PedidoPojo>();
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -89,7 +90,8 @@ public class LlamadaTabla extends HttpServlet {
 		}
 		// request.getSession();
 		request.setAttribute("listaEnvios", listaEnvios);
-
+		request.getSession().setAttribute("origen", origen);
+		request.getSession().setAttribute("destino", destino);
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/presentacionTabla.jsp");
 		rd.forward(request, response);
 
