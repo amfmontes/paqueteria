@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -43,18 +44,28 @@ public class Alta extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		doGet(request, response);
-		java.util.Date stringFecha=new java.util.Date(request.getParameter("fecha"));
+		
+//		java.util.Date stringFecha=new java.util.Date(request.getParameter("fecha"));
 		
 		String origen= request.getParameter("origen");
 		String destino= request.getParameter("destino");
 		String tamano= request.getParameter("tamano");
 		//String fecha=request.getParameter("fecha");
-//		SimpleDateFormat formato= new SimpleDateFormat("yyyy-mm-dd");
-//		formato.format(stringFecha);
-		java.sql.Date fechaDate = new java.sql.Date(stringFecha.getTime());
+		String fechaDate = request.getParameter("fecha");
+		SimpleDateFormat formato= new SimpleDateFormat("yyyy-MM-dd");
+		java.util.Date date = null;
+		try {
+			date = formato.parse(fechaDate);
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		
+		java.sql.Date fecha = new java.sql.Date(date.getTime());
 		//Date fechaDate = request.getParameter("fecha");
-		SimpleDateFormat formato1= new SimpleDateFormat("yyyy-mm-dd");
-		formato1.format(fechaDate);
+//		SimpleDateFormat formato1= new SimpleDateFormat("yyyy-MM-dd");
+//		formato1.format(fechaDate);
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -64,7 +75,7 @@ public class Alta extends HttpServlet {
 		ps.setString(1, origen);
 		ps.setString(2, destino);
 		ps.setString(3, tamano);
-		ps.setDate(4, (java.sql.Date) fechaDate);
+		ps.setDate(4,  fecha);
 		int insertar= ps.executeUpdate();
 		
 		

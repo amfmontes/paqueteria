@@ -190,9 +190,9 @@
         });
       };
 
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0sSBpWehnnsYjdr8F4gBZsOOROk9gxYo&libraries=places&callback=initMap"
-        async defer></script>
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0sSBpWehnnsYjdr8F4gBZsOOROk9gxYo&libraries=places&callback=initMap"
+          async defer></script>
   </body>
 
 </html>

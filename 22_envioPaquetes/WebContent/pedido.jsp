@@ -11,8 +11,8 @@
       font-family: tahoma, verdana, sans-serif;
    }
     </style>
- <script type="text/javascript" src="calendario_dw/jquery-1.4.4.min.js"></script>
-<script type="text/javascript" src="calendario_dw/calendario_dw.js"></script>
+ <!-- <script type="text/javascript" src="calendario_dw/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="calendario_dw/calendario_dw.js"></script> -->
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -37,9 +37,9 @@ Tamaño del paquete: <select name="tamano">
 
 </select></br></br>
 
-Fecha de llegada: <input type="text" name="fecha" class="campofecha" size="12"></br></br>
+Fecha de llegada: <input type="date" name="fecha"></br></br>
 
-
+<!-- <input type="text" name="fecha" class="campofecha" size="12"> -->
   
 
 <input type="submit" value="Alta">
