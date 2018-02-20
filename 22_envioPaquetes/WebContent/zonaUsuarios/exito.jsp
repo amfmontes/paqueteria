@@ -8,8 +8,9 @@
 </head>
 <body>
 <h2>Pedido realizado con éxito</h2>
-
+<form action="Alta" method="get">
 <p>¿Quiere realizar alguna otra acción?</p>
-<a href="index.jsp">Ir a la página principal</a>
+<input type="submit"  value="Ir a la página principal">
+</form>
 </body>
 </html>

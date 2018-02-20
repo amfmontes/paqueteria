@@ -14,11 +14,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Alta
  */
-@WebServlet("/Alta")
+@WebServlet("/zonaUsuarios/Alta")
 public class Alta extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -35,7 +36,18 @@ public class Alta extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println("Llega al servlet GET");
+		String action=(request.getPathInfo()!=null?request.getPathInfo():"/index.jsp");
+        HttpSession sesion = request.getSession();
+        if(action.equals("/index.jsp")){
+            sesion.invalidate();
+            response.sendRedirect("/index.jsp");
+        }else{
+           
+        }
+		
+		
 	}
 
 	/**
@@ -89,11 +101,6 @@ public class Alta extends HttpServlet {
 	
 		response.sendRedirect("exito.jsp");
 		
-	}
-
-	private Object setDate(int i, Date fechaDate) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

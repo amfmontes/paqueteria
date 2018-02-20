@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet Filter implementation class FiltroEntregas
  */
-@WebFilter(filterName = "/FiltroEntregas", urlPatterns = "/pedido.jsp")
+@WebFilter(filterName = "/FiltroEntregas", urlPatterns = "/zonaUsuarios/pedido.jsp")
 public class FiltroEntregas implements Filter {
 
 	/**
@@ -30,6 +30,7 @@ public class FiltroEntregas implements Filter {
 	 */
 	public void destroy() {
 		// TODO Auto-generated method stub
+		
 	}
 
 	/**

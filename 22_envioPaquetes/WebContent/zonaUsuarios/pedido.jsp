@@ -4,22 +4,13 @@
 <html lang="es">
 <head>
 
-<!-- Estilos de calendario cogidos de la pagina https://desarrolloweb.com/articulos/implementar-plugin-calendario-jquery.html -->
+
 <link href="calendario_dw/calendario_dw-estilos.css" type="text/css" rel="STYLESHEET">
 <style type="text/css">
    body{
       font-family: tahoma, verdana, sans-serif;
    }
     </style>
- <!-- <script type="text/javascript" src="calendario_dw/jquery-1.4.4.min.js"></script>
-<script type="text/javascript" src="calendario_dw/calendario_dw.js"></script> -->
-
-<script type="text/javascript">
-$(document).ready(function(){
-   $(".campofecha").calendarioDW();
-}) 
-</script>
-
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Elección de pedido</title>
 </head>
