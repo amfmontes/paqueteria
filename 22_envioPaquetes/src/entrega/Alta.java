@@ -38,11 +38,11 @@ public class Alta extends HttpServlet {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 		System.out.println("Llega al servlet GET");
-		String action=(request.getPathInfo()!=null?request.getPathInfo():"/index.jsp");
+		String action=(request.getPathInfo()!=null?request.getPathInfo():"/22_envioPaquetes");
         HttpSession sesion = request.getSession();
-        if(action.equals("/index.jsp")){
+        if(action.equals("/22_envioPaquetes")){
             sesion.invalidate();
-            response.sendRedirect("/index.jsp");
+            response.sendRedirect("/22_envioPaquetes");
         }else{
            
         }
