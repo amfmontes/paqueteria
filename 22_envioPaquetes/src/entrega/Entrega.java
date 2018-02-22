@@ -45,9 +45,9 @@ public class Entrega extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
 	
-		
+		System.out.println("Metodo GET");
 
 	}
 
@@ -84,15 +84,10 @@ public class Entrega extends HttpServlet {
 			session.setAttribute("nombre", nombre);
 			response.sendRedirect("zonaUsuarios/pedido.jsp");
 		}else{
-			//He comprobado que esta parte no la hace-> Mirarlo
-			System.out.println("fallo en el if");
-			RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.jsp");
-			PrintWriter out= response.getWriter();
-			out.println("<font color=red>Nombre o contraseña inválidos.</font>");
-		
-			    		    		
+			    	    		
      				}
-		 }
+		
+			 }
 		 conn.close();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -101,6 +96,11 @@ public class Entrega extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+System.out.println("esquiva el if");
+		
+		response.sendRedirect("login.jsp");
+//			PrintWriter out= response.getWriter();
+//			out.println("<font color=red>Nombre o contraseña inválidos.</font>");
 	//	request.getSession().setAttribute("pass", pass);
 	}//el del metodo POST
 

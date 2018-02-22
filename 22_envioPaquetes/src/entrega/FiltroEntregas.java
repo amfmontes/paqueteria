@@ -48,11 +48,13 @@ public class FiltroEntregas implements Filter {
 		HttpSession session = req.getSession(false);
 
 		if (session == null || session.getAttribute("nombre")== null) {
-			res.sendRedirect("login.jsp");
+			res.sendRedirect("/22_envioPaquetes/login.jsp");
 		} else {
+			System.out.println("el else del filtro");
 			// pass the request along the filter chain
 			chain.doFilter(request, response);
 		}
+		
 
 	}
 
